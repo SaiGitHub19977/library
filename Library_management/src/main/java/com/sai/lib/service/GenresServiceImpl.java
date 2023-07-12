@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.sai.lib.model.Genres;
 import com.sai.lib.repo.GenresRepo;
 
 
@@ -15,8 +17,9 @@ public class GenresServiceImpl implements IGenresService {
 	private GenresRepo genresRepo;
 
 	@Override
-	 public List<String> getAllGenres() {
-        return genresRepo.findAll().stream().map(e->e.getGenre()).collect(Collectors.toList());
+	 public List<Genres> getAllGenres() {
+         return genresRepo.findAll();
+         //return list.stream().map(e->e.getGenre()).collect(Collectors.toList());
     }
 
 }

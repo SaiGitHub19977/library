@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sai.lib.model.Genres;
 import com.sai.lib.service.IGenresService;
 
 @RestController
@@ -17,8 +18,8 @@ public class GenresController {
     private IGenresService genresService;
 
     @GetMapping("/getAllGenres")
-    public ResponseEntity<List<String>> getAllGenres() {
-        List<String> genres = genresService.getAllGenres();
-        return ResponseEntity.ok(genres);
+    public ResponseEntity<List<Genres>> getAllGenres() {
+        //List<String> genres = genresService.getAllGenres();
+        return ResponseEntity.ok(genresService.getAllGenres());
     }
 }
